@@ -1,0 +1,393 @@
+[
+  {
+    "type": "Feature",
+    "properties": {
+      "_id": "59035a0fbcab981ba9386b37",
+      "index": 0,
+      "featureclass": "A"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        80.246771,
+        13.061912
+      ]
+    },
+    "address":{
+      "locality": "DoodleBlue Innovations private Limited",
+      "city": "chennai",
+      "state": "Tamilnadu",
+      "country": "INDIA"
+    },
+    "image": "./loc1.png",
+    "title": "First Place"
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "_id": "59035a0f808df1920739291a",
+      "index": 1,
+      "featureclass": "A"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        80.224818,
+        13.052117
+      ]
+    },
+    "address":{
+      "locality": "FrontLine Appartments",
+      "city": "chennai",
+      "state": "Tamilnadu",
+      "country": "INDIA"
+    },
+    "image": "./loc2.png",
+    "title": "Second Place"
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "_id": "59035a0ffd4cc5dbaa047afb",
+      "index": 2,
+      "featureclass": "A"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        80.264572,
+        13.058581
+      ]
+    },
+    "address":{
+      "locality": "Express Avenue",
+      "city": "chennai",
+      "state": "Tamilnadu",
+      "country": "INDIA"
+    },
+    "image": "./loc3.png",
+    "title": "Third Place"
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "_id": "59035a0ff15552816e77400e",
+      "index": 3,
+      "featureclass": "A"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        80.282403,
+        13.049953
+      ]
+    },
+    "address":{
+      "locality": "Marina Beach",
+      "city": "chennai",
+      "state": "Tamilnadu",
+      "country": "INDIA"
+    },
+    "image": "./loc4.png",
+    "title": "Fourth Place"
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "_id": "59035a0f242d707b7ffd9e7d",
+      "index": 4,
+      "featureclass": "A"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        77.039208,
+        11.030314
+      ]
+    },
+    "address":{
+      "locality": "Coimbatore International Airport",
+      "city": "coimbatore",
+      "state": "Tamilnadu",
+      "country": "INDIA"
+    },
+    "image": "./loc5.png",
+    "title": "Fifth Place"
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "_id": "59035a0faf4c7543ab312d2f",
+      "index": 5,
+      "featureclass": "A"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        76.913025,
+        11.323854
+      ]
+    },
+    "address":{
+      "locality": "Black Thunder",
+      "city": "coimbatore",
+      "state": "Tamilnadu",
+      "country": "INDIA"
+    },
+    "image": "./loc6.png",
+    "title": "Sixth Place"
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "_id": "59035a0fe527a88db3bfb3c8",
+      "index": 6,
+      "featureclass": "A"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        76.959226,
+        11.009685
+      ]
+    },
+    "address":{
+      "locality": "BrookeFields Mall",
+      "city": "coimbatore",
+      "state": "Tamilnadu",
+      "country": "INDIA"
+    },
+    "image": "./loc7.png",
+    "title": "Seventh Place"
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "_id": "59035a0f7a3350de31923f3a",
+      "index": 10,
+      "featureclass": "E"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        80.443040,
+        16.300432
+      ]
+    },
+    "address":{
+      "locality": "Guntur Railway Station",
+      "city": "guntur",
+      "state": "Andhrapradesh",
+      "country": "INDIA"
+    },
+    "image": "./loc11.png",
+    "title": "Eleventh Place"
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "_id": "59035a0fe8c02371bf89f30a",
+      "index": 11,
+      "featureclass": "E"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        80.455154,
+        16.281695
+      ]
+    },
+    "address":{
+      "locality": "Anjeneya Swamy Temple",
+      "city": "guntur",
+      "state": "Andhrapradesh",
+      "country": "INDIA"
+    },
+    "image": "./loc12.png",
+    "title": "Twelveth Place"
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "_id": "59035a0f6826ee85dd075b9f",
+      "index": 12,
+      "featureclass": "E"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        80.423319,
+        16.312504
+      ]
+    },
+    "address":{
+      "locality": "Ntr Stadium Guntur",
+      "city": "guntur",
+      "state": "Andhrapradesh",
+      "country": "INDIA"
+    },
+    "image": "./loc13.png",
+    "title": "Thirteen Place"
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "_id": "59035a0f43e69e03794c3a41",
+      "index": 13,
+      "featureclass": "E"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        80.438000,
+        16.333253
+      ]
+    },
+    "address":{
+      "locality": "Cine Square Guntur",
+      "city": "guntur",
+      "state": "Andhrapradesh",
+      "country": "INDIA"
+    },
+    "image": "./loc14.png",
+    "title": "Fourteen Place"
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "_id": "59035a0fc4d8ffb3da5594f3",
+      "index": 14,
+      "featureclass": "E"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        80.643581,
+        16.501175
+      ]
+    },
+    "address":{
+      "locality": "PVR Mall",
+      "city": "vijayawada",
+      "state": "Andhrapradesh",
+      "country": "INDIA"
+    },
+    "image": "./loc15.png",
+    "title": "Fifteen Place"
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "_id": "59035a0f08132b9ccab0977c",
+      "index": 15,
+      "featureclass": "E"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        80.619523,
+        16.518470
+      ]
+    },
+    "address":{
+      "locality": "Vijayawada Railway Station",
+      "city": "vijayawada",
+      "state": "Andhrapradesh",
+      "country": "INDIA"
+    },
+    "image": "./loc16.png",
+    "title": "Sixteen Place"
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "_id": "59035a0fee5ed92ce745f38e",
+      "index": 16,
+      "featureclass": "E"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        80.619523,
+        16.518470
+      ]
+    },
+    "address":{
+      "locality": "Kanaka Durgamma Temple Vijayawada",
+      "city": "vijayawada",
+      "state": "Andhrapradesh",
+      "country": "INDIA"
+    },
+    "image": "./loc17.png",
+    "title": "Seventeen Place"
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "_id": "59035a0fbe8d8c1f88408399",
+      "index": 17,
+      "featureclass": "E"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        80.049922,
+        15.505723
+      ]
+    },
+    "address":{
+      "locality": "Ongole",
+      "city": "ongole",
+      "state": "Andhrapradesh",
+      "country": "INDIA"
+    },
+    "image": "./loc18.png",
+    "title": "Eighteen Place"
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "_id": "59035a0f8ab48d48d32cb5fb",
+      "index": 18,
+      "featureclass": "E"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        80.047407,
+        15.508784
+      ]
+    },
+    "address":{
+      "locality": "Ongole Ntr Statue",
+      "city": "ongole",
+      "state": "Andhrapradesh",
+      "country": "INDIA"
+    },
+    "image": "./loc19.png",
+    "title": "Nighenteen Place"
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "_id": "59035a0f6b322f2c797e1093",
+      "index": 19,
+      "featureclass": "E"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        80.039531,
+        15.507025
+      ]
+    },
+    "address":{
+      "locality": "Ongole Gandhi Park",
+      "city": "ongole",
+      "state": "Andhrapradesh",
+      "country": "INDIA"
+    },
+    "image": "./loc20.png",
+    "title": "Twenty Place"
+  }
+]

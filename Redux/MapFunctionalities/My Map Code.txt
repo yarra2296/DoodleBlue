@@ -1,0 +1,939 @@
+Works:
+
+1) Create a rawArray.
+2) Make them save in state
+
+MAP CLUSTER EXAMPLE AND CODE:
+https://github.com/warka0/react-native-cluster-example
+
+My Code:
+
+import React from 'react';
+import {
+    View,
+    StyleSheet
+} from 'react-native';
+import {Get} from '../actions/action'
+
+import { connect } from 'react-redux';
+import ViewMap from '../actions/action';
+import MapView from 'react-native-map-clustering';
+import { Marker } from 'react-native-maps';
+//import MapView from 'react-native-maps';
+
+
+class MapViewer extends React.Component {
+    static navigationOptions = ({ navigation }) => ({
+        title: `                                     MapView        `,
+    });
+    constructor(props){
+        super(props);
+        this.state={
+            data : [ ],
+            ZoomLevel: 0,
+        }
+    }
+
+    componentWillMount(){
+        this.setState({
+            data: [
+                {
+                    latlong: {
+                        lat: 13.061912,
+                        lng: 80.246771},
+                    address:{
+                        locality: "DoodleBlue Innovations private Limited",
+                        city: "chennai",
+                        state: "Tamilnadu",
+                        country: "INDIA"
+                    },
+                    image: "./loc1.png",
+                    title: "First Place"
+                },
+                {
+                    latlong: {
+                        lat: 13.052117,
+                        lng: 80.224818},
+                    address:{
+                        locality: "FrontLine Appartments",
+                        city: "chennai",
+                        state: "Tamilnadu",
+                        country: "INDIA"
+                    },
+                    image: "./loc2.png",
+                    title: "Second Place"
+                },
+                {
+                    latlong: {
+                        lat: 13.058581,
+                        lng: 80.264572},
+                    address:{
+                        locality: "Express Avenue",
+                        city: "chennai",
+                        state: "Tamilnadu",
+                        country: "INDIA"
+                    },
+                    image: "./loc3.png",
+                    title: "Third Place"
+                },
+                {
+                    latlong: {
+                        lat: 13.049953,
+                        lng: 80.282403},
+                    address:{
+                        locality: "Marina Beach",
+                        city: "chennai",
+                        state: "Tamilnadu",
+                        country: "INDIA"
+                    },
+                    image: "./loc4.png",
+                    title: "Fourth Place"
+                },
+                {
+                    latlong: {
+                        lat: 11.030314,
+                        lng: 77.039208},
+                    address:{
+                        locality: "Coimbatore International Airport",
+                        city: "coimbatore",
+                        state: "Tamilnadu",
+                        country: "INDIA"
+                    },
+                    image: "./loc5.png",
+                    title: "Fifth Place"
+                },
+                {
+                    latlong: {
+                        lat: 11.323854,
+                        lng: 76.913025},
+                    address:{
+                        locality: "Black Thunder",
+                        city: "coimbatore",
+                        state: "Tamilnadu",
+                        country: "INDIA"
+                    },
+                    image: "./loc6.png",
+                    title: "Sixth Place"
+                },
+                {
+                    latlong: {
+                        lat: 11.009685,
+                        lng: 76.959226},
+                    address:{
+                        locality: "BrookeFields Mall",
+                        city: "coimbatore",
+                        state: "Tamilnadu",
+                        country: "INDIA"
+                    },
+                    image: "./loc7.png",
+                    title: "Seventh Place"
+                },
+                {
+                    latlong: {
+                        lat: 12.924623,
+                        lng: 79.134781},
+                    address:{
+                        locality: "Vellore CMC",
+                        city: "vellore",
+                        state: "Tamilnadu",
+                        country: "INDIA"
+                    },
+                    image: "./loc8.png",
+                    title: "Eigth Place"
+                },
+                {
+                    latlong: {
+                        lat: 12.971780,
+                        lng: 79.158904},
+                    address:{
+                        locality: "Vellore VIT",
+                        city: "vellore",
+                        state: "Tamilnadu",
+                        country: "INDIA"
+                    },
+                    image: "./loc9.png",
+                    title: "Nineth Place"
+                },
+                {
+                    latlong: {
+                        lat: 12.874147,
+                        lng: 79.088352},
+                    address:{
+                        locality: "Vellore Golden Temple",
+                        city: "vellore",
+                        state: "Tamilnadu",
+                        country: "INDIA"
+                    },
+                    image: "./loc10.png",
+                    title: "Tenth Place"
+                },
+                {
+                    latlong: {
+                        lat: 16.300432,
+                        lng: 80.443040},
+                    address:{
+                        locality: "Guntur Railway Station",
+                        city: "guntur",
+                        state: "Andhrapradesh",
+                        country: "INDIA"
+                    },
+                    image: "./loc11.png",
+                    title: "Eleventh Place"
+                },
+                {
+                    latlong: {
+                        lat: 16.281695,
+                        lng: 80.455154},
+                    address:{
+                        locality: "Anjeneya Swamy Temple",
+                        city: "guntur",
+                        state: "Andhrapradesh",
+                        country: "INDIA"
+                    },
+                    image: "./loc12.png",
+                    title: "Twelveth Place"
+                },
+                {
+                    latlong: {
+                        lat: 16.312504,
+                        lng: 80.423319},
+                    address:{
+                        locality: "Ntr Stadium Guntur",
+                        city: "guntur",
+                        state: "Andhrapradesh",
+                        country: "INDIA"
+                    },
+                    image: "./loc13.png",
+                    title: "Thirteen Place"
+                },
+                {
+                    latlong: {
+                        lat: 16.333253,
+                        lng: 80.438000},
+                    address:{
+                        locality: "Cine Square Guntur",
+                        city: "guntur",
+                        state: "Andhrapradesh",
+                        country: "INDIA"
+                    },
+                    image: "./loc14.png",
+                    title: "Fourteen Place"
+                },
+                {
+                    latlong: {
+                        lat: 16.501175,
+                        lng: 80.643581},
+                    address:{
+                        locality: "PVR Mall",
+                        city: "vijayawada",
+                        state: "Andhrapradesh",
+                        country: "INDIA"
+                    },
+                    image: "./loc15.png",
+                    title: "Fifteen Place"
+                },
+                {
+                    latlong: {
+                        lat: 16.518470,
+                        lng: 80.619523},
+                    address:{
+                        locality: "Vijayawada Railway Station",
+                        city: "vijayawada",
+                        state: "Andhrapradesh",
+                        country: "INDIA"
+                    },
+                    image: "./loc16.png",
+                    title: "Sixteen Place"
+                },
+                {
+                    latlong: {
+                        lat: 16.515430,
+                        lng: 80.605970},
+                    address:{
+                        locality: "Kanaka Durgamma Temple Vijayawada",
+                        city: "vijayawada",
+                        state: "Andhrapradesh",
+                        country: "INDIA"
+                    },
+                    image: "./loc17.png",
+                    title: "Seventeen Place"
+                },
+                {
+                    latlong: {
+                        lat: 15.505723,
+                        lng: 80.049922},
+                    address:{
+                        locality: "Ongole",
+                        city: "ongole",
+                        state: "Andhrapradesh",
+                        country: "INDIA"
+                    },
+                    image: "./loc18.png",
+                    title: "Eighteen Place"
+                },
+                {
+                    latlong: {
+                        lat: 15.508784,
+                        lng: 80.047407},
+                    address:{
+                        locality: "Ongole Ntr Statue",
+                        city: "ongole",
+                        state: "Andhrapradesh",
+                        country: "INDIA"
+                    },
+                    image: "./loc19.png",
+                    title: "Nighenteen Place"
+                },
+                {
+                    latlong: {
+                        lat: 15.507025,
+                        lng: 80.039531},
+                    address:{
+                        locality: "Ongole Gandhi Park",
+                        city: "ongole",
+                        state: "Andhrapradesh",
+                        country: "INDIA"
+                    },
+                    image: "./loc20.png",
+                    title: "Twenty Place"
+                },
+            ]
+        });
+    }
+
+    markerPress(){
+
+    }
+
+    renderCustomMarker(point, region) {
+        if (region.latitudeDelta > MIN_DELTA_FOR_CIRCLE_MARKER) {
+            renderCircle(point);
+        } else {
+            renderPinMarker(point);
+        }
+    }
+
+    render(){
+        const { region } = this.props;
+        console.log(region);
+        return(
+            <MapView
+                region={{latitude: 52.5, longitude: 19.2,
+                    latitudeDelta: 8.5, longitudeDelta: 8.5}}
+                style={{width: 650, height: 650}}>
+                <Marker coordinate={{latitude: 52.0, longitude: 18.2}} />
+                <Marker coordinate={{latitude: 52.4, longitude: 18.7}} />
+                <Marker coordinate={{latitude: 52.1, longitude: 18.4}} />
+                <Marker coordinate={{latitude: 52.6, longitude: 18.3}} />
+                <Marker coordinate={{latitude: 51.6, longitude: 18.0}} />
+                <Marker coordinate={{latitude: 53.1, longitude: 18.8}} />
+                <Marker coordinate={{latitude: 52.9, longitude: 19.4}} />
+            </MapView>
+            {/*<View style ={styles.container}>
+                <MapView
+                    style={styles.map}
+                    fitToElements={true}
+                    maxZoomLevel={100}
+                    loadingEnabled={true}
+                    zoomControlEnabled={true}
+                    moveOnMarkerPress={false}
+                >
+                    <MapView.Marker
+                        coordinate={{
+                                latitude: this.state.data[0].latlong.lat,
+                                longitude: this.state.data[0].latlong.lng,
+                                latitudeDelta: 0.03,
+                                longitudeDelta: 0.03
+                            }}
+                            onPress={this.markerPress()}
+                            pinColor='yellow'
+                            title={this.state.data[0].title}
+                            description={this.state.data[0].address.locality}
+                        >
+                        </MapView.Marker>
+                        < MapView.Marker
+                        coordinate = {{
+                        latitude : this.state.data[1].latlong.lat,
+                        longitude : this.state.data[1].latlong.lng,
+                        latitudeDelta: 0.03,
+                        longitudeDelta: 0.03
+                    }}
+                        onPress={this.markerPress()}
+                        pinColor = 'yellow'
+                        title= {this.state.data[1].title}
+                        description={this.state.data[1].address.locality}
+                        >
+                        </MapView.Marker>
+                        <MapView.Marker
+                        coordinate ={{
+                        latitude: this.state.data[2].latlong.lat,
+                        longitude: this.state.data[2].latlong.lng,
+                        latitudeDelta: 0.03,
+                        longitudeDelta: 0.03
+                    }}
+                        onPress={this.markerPress()}
+                        pinColor = 'yellow'
+                        title= {this.state.data[2].title}
+                        description={this.state.data[2].address.locality}
+                        >
+                        </MapView.Marker>
+                        <MapView.Marker
+                        coordinate ={{
+                        latitude : this.state.data[3].latlong.lat,
+                        longitude : this.state.data[3].latlong.lng,
+                        latitudeDelta: 0.03,
+                        longitudeDelta: 0.03
+                    }}
+                        onPress={this.markerPress()}
+                        pinColor = 'yellow'
+                        title= {this.state.data[3].title}
+                        description={this.state.data[3].address.locality}
+                        >
+                        </MapView.Marker>
+                        <MapView.Marker
+                        coordinate ={{
+                        latitude: this.state.data[4].latlong.lat,
+                        longitude: this.state.data[4].latlong.lng,
+                        latitudeDelta: 0.03,
+                        longitudeDelta: 0.03
+                    }}
+                        onPress={this.markerPress()}
+                        pinColor = 'yellow'
+                        title= {this.state.data[4].title}
+                        description={this.state.data[4].address.locality}
+                        >
+                        </MapView.Marker>
+                        <MapView.Marker
+                        coordinate ={{
+                        latitude : this.state.data[5].latlong.lat,
+                        longitude : this.state.data[5].latlong.lng,
+                        latitudeDelta: 0.03,
+                        longitudeDelta: 0.03
+                    }}
+                        onPress={e => this.markerPress()}
+                        pinColor = 'yellow'
+                        title= {this.state.data[5].title}
+                        description={this.state.data[5].address.locality}
+                        >
+                        </MapView.Marker>
+                        <MapView.Marker
+                        coordinate ={{
+                        latitude: this.state.data[6].latlong.lat,
+                        longitude: this.state.data[6].latlong.lng,
+                        latitudeDelta: 0.03,
+                        longitudeDelta: 0.03
+                    }}
+                        onPress={e => this.markerPress()}
+                        pinColor = 'yellow'
+                        title= {this.state.data[6].title}
+                        description={this.state.data[6].address.locality}
+                        >
+                        </MapView.Marker>
+                        <MapView.Marker
+                        coordinate ={{
+                        latitude : this.state.data[7].latlong.lat,
+                        longitude : this.state.data[7].latlong.lng,
+                        latitudeDelta: 0.03,
+                        longitudeDelta: 0.03
+                    }}
+                        onPress={e => this.markerPress()}
+                        pinColor = 'yellow'
+                        title= {this.state.data[7].title}
+                        description={this.state.data[7].address.locality}
+                        >
+                        </MapView.Marker>
+                        <MapView.Marker
+                        coordinate ={{
+                        latitude: this.state.data[8].latlong.lat,
+                        longitude: this.state.data[8].latlong.lng,
+                        latitudeDelta: 0.03,
+                        longitudeDelta: 0.03
+                    }}
+                        onPress={e => this.markerPress()}
+                        pinColor = 'yellow'
+                        title= {this.state.data[8].title}
+                        description={this.state.data[8].address.locality}
+                        >
+                        </MapView.Marker>
+                        <MapView.Marker
+                        coordinate ={{
+                        latitude : this.state.data[9].latlong.lat,
+                        longitude : this.state.data[9].latlong.lng,
+                        latitudeDelta: 0.03,
+                        longitudeDelta: 0.03
+                    }}
+                        onPress={e => this.markerPress()}
+                        pinColor = 'yellow'
+                        title= {this.state.data[9].title}
+                        description={this.state.data[9].address.locality}
+                        >
+                        </MapView.Marker>
+                        <MapView.Marker
+                        coordinate ={{
+                        latitude: this.state.data[10].latlong.lat,
+                        longitude: this.state.data[10].latlong.lng,
+                        latitudeDelta: 0.03,
+                        longitudeDelta: 0.03
+                    }}
+                        onPress={e => this.markerPress()}
+                        pinColor = 'yellow'
+                        title= {this.state.data[10].title}
+                        description={this.state.data[10].address.locality}
+                        >
+                        </MapView.Marker>
+                        <MapView.Marker
+                        coordinate ={{
+                        latitude : this.state.data[11].latlong.lat,
+                        longitude : this.state.data[11].latlong.lng,
+                        latitudeDelta: 0.03,
+                        longitudeDelta: 0.03
+                    }}
+                        onPress={e => this.markerPress()}
+                        pinColor = 'yellow'
+                        title= {this.state.data[11].title}
+                        description={this.state.data[11].address.locality}
+                        >
+                        </MapView.Marker>
+                        <MapView.Marker
+                        coordinate ={{
+                        latitude: this.state.data[12].latlong.lat,
+                        longitude: this.state.data[12].latlong.lng,
+                        latitudeDelta: 0.03,
+                        longitudeDelta: 0.03
+                    }}
+                        onPress={e => this.markerPress()}
+                        pinColor = 'yellow'
+                        title= {this.state.data[12].title}
+                        description={this.state.data[12].address.locality}
+                        >
+                        </MapView.Marker>
+                        <MapView.Marker
+                        coordinate ={{
+                        latitude : this.state.data[13].latlong.lat,
+                        longitude : this.state.data[13].latlong.lng,
+                        latitudeDelta: 0.03,
+                        longitudeDelta: 0.03
+                    }}
+                        onPress={e => this.markerPress()}
+                        pinColor = 'yellow'
+                        title= {this.state.data[13].title}
+                        description={this.state.data[13].address.locality}
+                        >
+                        </MapView.Marker>
+                        <MapView.Marker
+                        coordinate ={{
+                        latitude: this.state.data[14].latlong.lat,
+                        longitude: this.state.data[14].latlong.lng,
+                        latitudeDelta: 0.03,
+                        longitudeDelta: 0.03
+                    }}
+                        onPress={e => this.markerPress()}
+                        pinColor = 'yellow'
+                        title= {this.state.data[14].title}
+                        description={this.state.data[14].address.locality}
+                        >
+                        </MapView.Marker>
+                        <MapView.Marker
+                        coordinate ={{
+                        latitude : this.state.data[15].latlong.lat,
+                        longitude : this.state.data[15].latlong.lng,
+                        latitudeDelta: 0.03,
+                        longitudeDelta: 0.03
+                    }}
+                        onPress={e => this.markerPress()}
+                        pinColor = 'yellow'
+                        title= {this.state.data[15].title}
+                        description={this.state.data[15].address.locality}
+                        >
+                        </MapView.Marker>
+                        <MapView.Marker
+                        coordinate ={{
+                        latitude: this.state.data[16].latlong.lat,
+                        longitude: this.state.data[16].latlong.lng,
+                        latitudeDelta: 0.03,
+                        longitudeDelta: 0.03
+                    }}
+                        onPress={e => this.markerPress()}
+                        pinColor = 'yellow'
+                        title= {this.state.data[16].title}
+                        description={this.state.data[16].address.locality}
+                        >
+                        </MapView.Marker>
+                        <MapView.Marker
+                        coordinate ={{
+                        latitude : this.state.data[17].latlong.lat,
+                        longitude : this.state.data[17].latlong.lng,
+                        latitudeDelta: 0.03,
+                        longitudeDelta: 0.03
+                    }}
+                        onPress={e => this.markerPress()}
+                        pinColor = 'yellow'
+                        title= {this.state.data[17].title}
+                        description={this.state.data[17].address.locality}
+                        >
+                        </MapView.Marker>
+                        <MapView.Marker
+                        coordinate ={{
+                        latitude: this.state.data[18].latlong.lat,
+                        longitude: this.state.data[18].latlong.lng,
+                        latitudeDelta: 0.03,
+                        longitudeDelta: 0.03
+                    }}
+                        onPress={e => this.markerPress()}
+                        pinColor = 'yellow'
+                        title= {this.state.data[18].title}
+                        description={this.state.data[18].address.locality}
+                        >
+                        </MapView.Marker>
+                        <MapView.Marker
+                        coordinate ={{
+                        latitude : this.state.data[19].latlong.lat,
+                        longitude : this.state.data[19].latlong.lng,
+                        latitudeDelta: 0.03,
+                        longitudeDelta: 0.03
+                    }}
+                        onPress={e => this.markerPress()}
+                        pinColor = 'yellow'
+                        title= {this.state.data[19].title}
+                        description={this.state.data[19].address.locality}
+                        >
+                        </MapView.Marker>
+                </MapView>
+            </View>*/}
+        )
+    }
+}
+
+const styles = StyleSheet.create({
+    container: {
+        ...StyleSheet.absoluteFillObject,
+        height: 650,
+        width: 650,
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+    },
+    map: {
+        ...StyleSheet.absoluteFillObject,
+    },
+});
+
+
+ renderMarker(){
+        console.log('value of address1',this.state.data[0].address.state)
+        console.log('value of address2',this.state.data.length-1)
+       for( i = 0; i <= (this.state.data.length-1); i++) {
+           /*if (this.state.data[i].address.country === 'INDIA') {
+               return (
+                   this.state.markersOnMap.map(marker => (
+                       <MapView.Marker key={marker.title}
+                                       coordinate={marker.latlong}
+                                       title={marker.title}
+                       >
+                           <View style={styles.radius}>
+                               <View style={styles.markerStyle}>
+                               </View>
+                           </View>
+                       </MapView.Marker>
+                   ))
+               )
+           }*/
+           if (this.state.data[i].address.state === 'Andhrapradesh') {
+               console.log('value of address1', this.state.data[i].address.state, this.state.data[i].title)
+               /* this.state.markersOnMap.push(this.state.data[i])
+                this.setState({
+                    markersOnMap: this.state.markersOnMap
+                })*/
+               return (
+                   this.state.data.map(marker => (
+                       <MapView.Marker key={marker.title}
+                                       coordinate={marker.latlong}
+                                       title={marker.title}
+                       >
+                           <View style={styles.radius}>
+                               <View style={styles.markerStyle}>
+                               </View>
+                           </View>
+                       </MapView.Marker>
+                   ))
+               )
+           }
+
+           /*if (this.state.data[i].address.state === 'Tamilnadu') {
+               return (
+                   this.state.markersOnMap.map(marker => (
+                       <MapView.Marker key={marker.title}
+                                       coordinate={marker.latlong}
+                                       title={marker.title}
+                       >
+                           <View style={styles.radius}>
+                               <View style={styles.markerStyle}>
+                               </View>
+                           </View>
+                       </MapView.Marker>
+                   ))
+               )
+           }*/
+       }
+    }
+
+
+/*
+function mapStateToProps (state) {
+    return {
+        MapView: state.appData.MapView,
+    }
+}
+
+function mapDispatchToProps (dispatch) {
+    return {
+        Get : (value) => dispatch(Get(value))
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(MapViewer)*/
+
+
+
+
+
+Hi @jeveloper , my MapView is not zooming out . Also I want to display map in such a way that it should cover all the cordinates. Kindly check the code here
+
+import React from 'react';
+import { StyleSheet,Text,View } from 'react-native';
+import MapView from 'react-native-maps';
+
+export default class ReactMap extends React.Component {
+constructor(props){
+super(props);
+this.state={
+markers:[{
+title:'Coordinate 1',
+coordinates:{
+latitude: 18.5204,
+longitude: 73.8567,
+longitudeDelta:50,
+latitudeDelta:50,
+},
+},
+{
+title:'Coordinate 2',
+coordinates:{
+latitude: 25.2744,
+longitude: 133.7751,
+longitudeDelta:50,
+latitudeDelta:50,
+},
+},
+{
+title:'Coordinate 3',
+coordinates:{
+latitude: 37.0902,
+longitude: 72.8777,
+longitudeDelta:50,
+latitudeDelta:50,
+},
+},
+{
+title:'Coordinate 4',
+coordinates:{
+latitude: 46.2276,
+longitude: 2.2137,
+longitudeDelta:50,
+latitudeDelta:50,
+},
+}]
+}
+}
+
+getInitialState(){
+    return{
+        region:new MapView.AnimatedRegion({
+            latitude: 37.0902,
+            longitude: 72.8777,
+            longitudeDelta:0.1,
+            latitudeDelta:0.1
+        }),
+    };
+}
+
+render() {
+
+    return (
+       
+                <MapView style={styles.map}
+                region={this.state.region}
+                onRegionChangeComplete={(region) => {
+                    console.log(" region", region) 
+              }}>
+                 
+                {this.state.markers.map(marker =>   (
+                    <MapView.Marker key={marker.title}
+                    coordinate={marker.coordinates}
+                    title={marker.title}
+                    >
+                    <View style={styles.radius}>
+                    <View style={styles.markerStyle}/>
+                    </View>
+                   </MapView.Marker>
+                ))}
+
+                </MapView> 
+    
+    );
+}
+}
+
+const styles=StyleSheet.create({
+container:{
+position:'absolute',
+top:0,
+bottom:0,
+left:0,
+right:0,
+justifyContent:'flex-end',
+alignItems:'center'
+},
+map:{
+position:'absolute',
+top:0,
+bottom:0,
+left:0,
+right:0,
+},
+radius:{
+height:15,
+width:15,
+backgroundColor:'#81BD26',
+overflow:'hidden',
+borderRadius:50/2,
+borderWidth:1,
+alignItems:'center',
+justifyContent:'center'
+},
+markerStyle:{
+height:14,
+width:14,
+backgroundColor:'#81BD26',
+alignItems:'center',
+justifyContent:'center'
+}
+});
+
+
+
+import geoViewport from 'geo-viewport'
+import { Dimensions } from 'react-native'
+
+const { height, width } = Dimensions.get('window')
+
+const bounds = [
+    longitude - longitudeDelta,
+    latitude - latitudeDelta,
+    longitude + longitudeDelta,
+    latitude + latitudeDelta,
+]
+
+geoViewport.viewport(bounds, [height, width])
+
+
+Marker Modification:(Based on Zoom Levels)
+
+function renderCustomMarker(point, region) {
+  if (region.latitudeDelta > MIN_DELTA_FOR_CIRCLE_MARKER) {
+    renderCircle(point);
+  } else {
+    renderPinMarker(point);
+  }
+}
+
+
+
+
+Render Marker Based upon the Zoom levels:
+
+
+<MapView.Marker coordinate={marker.latlng}>
+  <CustomMarker {...marker} />
+</MapView.Marker>
+
+
+
+
+No.of markers displaying:-
+
+{this.state.markers.map((marker, index) => {
+    return (
+      <MapView.Marker key={index} coordinate={marker.coordinate}>
+        <Animated.View style={[styles.markerWrap]}>
+          <Animated.View style={[styles.ring]} />
+          <View style={styles.marker} />
+        </Animated.View>
+      </MapView.Marker>
+    );
+  })}
+
+
+
+
+CLUSTER LOGIC CODE:
+
+
+
+
+ _createCluster(data) {
+        const index = supercluster({
+            radius: 60,
+            maxZoom: 15, // Default: 16
+            nodeSize: 128,
+        });
+        index.load(data.features);
+        return index;
+    }
+
+    _convertPoints(data) {
+        const results = {
+            type: 'MapCollection',
+            features: [],
+        };
+        data.map((value, key) => {
+            array = {
+                type: 'Map',
+                properties: {
+                    id: value.id,
+                    name: value.name,
+                    lat_x: value.lat,
+                    long_x: value.long,
+                },
+                geometry: {
+                    type: 'Point',
+                    coordinates: [
+                        value.long,
+                        value.lat,
+                    ],
+                },
+            };
+            results.features.push(array);
+        });
+        return results;
+    }
+
+    _getZoomLevel(region = this.state.region) {
+        const angle = region.longitudeDelta;
+        const level = Math.round(Math.log(360 / angle) / Math.LN2);
+        return level;
+    }
+
+    _createRegions() {
+        const padding = 0;
+        const markers = this.state.clusters.getClusters([
+            this.state.region.longitude - (this.state.region.longitudeDelta * (0.5 + padding)),
+            this.state.region.latitude - (this.state.region.latitudeDelta * (0.5 + padding)),
+            this.state.region.longitude + (this.state.region.longitudeDelta * (0.5 + padding)),
+            this.state.region.latitude + (this.state.region.latitudeDelta * (0.5 + padding)),
+        ], this._getZoomLevel());
+        return markers.map(marker => this.renderMarkers(marker));
+    }
+

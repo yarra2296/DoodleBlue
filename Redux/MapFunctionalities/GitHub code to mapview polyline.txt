@@ -1,0 +1,42 @@
+Code that works fine with the react-native-cluster-example:
+https://github.com/davidroman0O/react-native-cluster-example/pull/1
+
+
+
+<ClusteredMapView
+          style={{ flex: 1 }}
+          data={this.state.pins}
+          ref={r => (this.map = r)}
+          textStyle={{ color: '#65bc46' }}
+          renderMarker={this.renderMarker}
+          renderCluster={this.renderCluster}
+          preserveClusterPressBehavior={true}
+          edgePadding={{ top: 32, left: 10, right: 64, bottom: 64 }}
+          initialRegion={{
+            latitude: italyCenterLatitude,
+            longitude: italyCenterLongitude,
+            latitudeDelta: 12,
+            longitudeDelta: 12,
+          }}
+        >
+          <MapView.Polyline
+            coordinates={[
+              { latitude: 41.8025259, longitude: 12.4351431 },
+              { latitude: 41.7896386, longitude: 12.421646 },
+              { latitude: 41.7665248, longitude: 12.4161628 },
+              { latitude: 41.7734153, longitude: 12.4577787 },
+              { latitude: 41.7948605, longitude: 12.4596065 },
+              { latitude: 41.8025259, longitude: 12.4351431 },
+            ]}
+            strokeColor="#000" // fallback for when `strokeColors` is not supported by the map-provider
+            strokeColors={[
+              '#7F0000',
+              '#00000000', // no color, creates a "long" gradient between the previous and next coordinate
+              '#B24112',
+              '#E5845C',
+              '#238C23',
+              '#7F0000',
+            ]}
+            strokeWidth={6}
+          />
+        </ClusteredMapView>
