@@ -1,0 +1,3 @@
+rootProject.name = 'FormValidation'
+
+include ':app'
