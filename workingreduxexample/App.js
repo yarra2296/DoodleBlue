@@ -76,7 +76,7 @@ styles = StyleSheet.create({
 function mapStateToProps (state) {
     return {
         articles: state.appData.articles,
-        isFetching: state.appData.isFetching
+        isFetching: state.appData.iFetching
     }
 }
 
