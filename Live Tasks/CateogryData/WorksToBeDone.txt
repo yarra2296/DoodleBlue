@@ -1,0 +1,84 @@
+Task-1 
+
+Completed (View State management)-3 Hours
+
+
+Redux Error Values is not sent using the Code.(Redux values only same element is updating & while different element is added it gets lost old Array).
+1) Async Storage
+(if it's already added to cart, show an alert for it)
+2) Dynamic Stars
+3) Dynamic Cart and a value of no.of elements in Cart
+
+
+
+Present Working Things:
+
+1) Make the Product Items Dynamic.
+2) Higlight the product Selected.
+
+
+
+
+Deleted Code:
+
+
+/*<Image source={{uri: this.Rating(this.props.renderproduct.Rating)}} style={styles.rating} />*/
+
+
+/*for(let i=0; i<=(b-1);i++)
+        {
+            const c={name: this.state.data[i].CateogryName, value: this.state.data[i].CateogryImage}
+            this.state.cateogryListNames.push(c)
+        }*/
+/* for(let i=0; i<=(b-1);i++)
+        {
+            let cateogrynames = this.state.data[i].CateogryName
+            let insertvalue = {name: cateogrynames}
+            if(this.state.cateogryListNames.length === 0)
+            {
+                this.state.cateogryListNames.push(insertvalue)
+            }
+            else
+            {
+                for(let j=0; j<=(this.state.cateogryListNames.length-1);j++)
+                {
+                 if(cateogrynames===this.state.cateogryListNames[j])
+                 {
+                     return;
+                 }
+                 else
+                 {
+                     this.state.cateogryListNames.push(insertvalue)
+                 }
+                }
+            }
+        }*/
+
+{/* {this.state.isSelectedAudio ? <SectionList
+                    showsHorizontalScrollIndicator={false}
+                    sections={[ {data: this.state.audioValues} ]}
+                    keyExtractor={(item, index) => index}
+                    renderItem={({item}) =>
+                        (<SecondView renderproduct={item}/>)}
+                /> : <View></View>}
+                {this.state.isSelectedChargers? <SectionList
+                    showsHorizontalScrollIndicator={false}
+                    sections={[ {data: this.state.chargersValues} ]}
+                    keyExtractor={(item, index) => index}
+                    renderItem={({item}) =>
+                        ( <View><SecondView renderproduct={item}/></View> )}
+                /> : <View></View>}
+                {this.state.isSelectedPowerBanks ? <SectionList
+                    showsHorizontalScrollIndicator={false}
+                    sections={[ {data: this.state.powerBankValues} ]}
+                    keyExtractor={(item, index) => index}
+                    renderItem={({item}) =>
+                        ( <SecondView renderproduct={item}/> )}
+                /> : <View></View>}
+                {this.state.isSelectedPhotography ? <SectionList
+                    showsHorizontalScrollIndicator={false}
+                    sections={[ {data: this.state.photographyValues} ]}
+                    keyExtractor={(item, index) => index}
+                    renderItem={({item}) =>
+                        ( <SecondView renderproduct={item}/>)}
+                /> : <View></View>}*/}
